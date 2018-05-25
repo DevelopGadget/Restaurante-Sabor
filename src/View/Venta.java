@@ -40,7 +40,6 @@ public class Venta extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         btn_MenuVenta = new javax.swing.JButton();
-        btn_InformacionVenta = new javax.swing.JButton();
         btn_ProductosVenta = new javax.swing.JButton();
         btn_VendedoresVenta = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -87,13 +86,6 @@ public class Venta extends javax.swing.JFrame {
         btn_MenuVenta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_MenuVentaMouseClicked(evt);
-            }
-        });
-
-        btn_InformacionVenta.setText("Informacion");
-        btn_InformacionVenta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_InformacionVentaMouseClicked(evt);
             }
         });
 
@@ -345,8 +337,6 @@ public class Venta extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(btn_VendedoresVenta)
                                 .addGap(18, 18, 18)
-                                .addComponent(btn_InformacionVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
                                 .addComponent(btn_ProductosVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -415,7 +405,6 @@ public class Venta extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(btn_VendedoresVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btn_InformacionVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btn_ProductosVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(btn_MenuVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(21, 21, 21))
@@ -568,19 +557,6 @@ public class Venta extends javax.swing.JFrame {
         vendedor.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_VendedoresVentaMouseClicked
-
-    //Evento para pasar a la ventana Informacion
-    private void btn_InformacionVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InformacionVentaMouseClicked
-//        try {
-        Informacion infomacion = new Informacion();
-        infomacion.setVisible(true);
-        this.dispose();
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "No puede acceder a esta opcion, primero se necesita una venta.", "Error", 0);
-//        }
-
-
-    }//GEN-LAST:event_btn_InformacionVentaMouseClicked
 
     private void btn_ProductosVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ProductosVentaMouseClicked
 
@@ -758,7 +734,7 @@ public class Venta extends javax.swing.JFrame {
     private void btn_ComprarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ComprarVentaActionPerformed
         venco.Registro();
         venco.BackupV();
-        proco.Backup();;
+        proco.Backup();
         venco.BorrarRegistro();
         txt_Cantidad.setEnabled(false);
         txt_CodigoComprador.setEnabled(false);
@@ -770,7 +746,6 @@ public class Venta extends javax.swing.JFrame {
         ListarTodo();
         Subtotal(tp_TotalPagarVenta);
         btn_ComprarVenta.setEnabled(false);
-        venco.Ordenamiento();
         txt_CodigoComprador.setText(null);
     }//GEN-LAST:event_btn_ComprarVentaActionPerformed
 
@@ -931,7 +906,6 @@ public class Venta extends javax.swing.JFrame {
     private javax.swing.JButton btn_CancelarBusquedaRegistroVenta;
     private javax.swing.JButton btn_CancelarCompra;
     private javax.swing.JButton btn_ComprarVenta;
-    private javax.swing.JButton btn_InformacionVenta;
     private javax.swing.JButton btn_MenuVenta;
     private javax.swing.JButton btn_ProductosVenta;
     private javax.swing.JButton btn_RetirarVenta;

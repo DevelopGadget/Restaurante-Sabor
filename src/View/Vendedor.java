@@ -43,7 +43,6 @@ public class Vendedor extends javax.swing.JFrame {
         txt_TelefonoVendedor = new javax.swing.JTextField();
         btn_VentaVendedor = new javax.swing.JButton();
         btn_MenuVendedor = new javax.swing.JButton();
-        btn_InformacionVendedor = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_TablaVendedor = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
@@ -107,18 +106,6 @@ public class Vendedor extends javax.swing.JFrame {
         btn_MenuVendedor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_MenuVendedorMouseClicked(evt);
-            }
-        });
-
-        btn_InformacionVendedor.setText("Informacion");
-        btn_InformacionVendedor.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_InformacionVendedorMouseClicked(evt);
-            }
-        });
-        btn_InformacionVendedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_InformacionVendedorActionPerformed(evt);
             }
         });
 
@@ -324,9 +311,7 @@ public class Vendedor extends javax.swing.JFrame {
                                 .addComponent(btn_MenuVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(8, 8, 8)
                                 .addComponent(btn_VentaVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btn_InformacionVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(145, 145, 145)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
@@ -366,7 +351,6 @@ public class Vendedor extends javax.swing.JFrame {
                             .addComponent(btn_MenuVendedor)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(btn_VentaVendedor)
-                                .addComponent(btn_InformacionVendedor)
                                 .addComponent(jButton1))))))
         );
 
@@ -379,17 +363,6 @@ public class Vendedor extends javax.swing.JFrame {
         venta.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_VentaVendedorMouseClicked
-
-    //Evento para pasar a la ventana Informacion
-    private void btn_InformacionVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InformacionVendedorMouseClicked
-        try {
-            Informacion infomacion = new Informacion();
-            infomacion.setVisible(true);
-            this.dispose();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No puede acceder a esta opcion, primero se necesta una venta.", "Error", 0);
-        }
-    }//GEN-LAST:event_btn_InformacionVendedorMouseClicked
 
     //Evento para pasar a la ventana Menu
     private void btn_MenuVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_MenuVendedorMouseClicked
@@ -553,10 +526,6 @@ public class Vendedor extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_CancelarBuscarActionPerformed
 
-    private void btn_InformacionVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InformacionVendedorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_InformacionVendedorActionPerformed
-
     private void txt_NumeroDocumentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_NumeroDocumentoKeyTyped
         char c = evt.getKeyChar();
         if (Character.isLetter(c)) {
@@ -709,7 +678,6 @@ public class Vendedor extends javax.swing.JFrame {
     private javax.swing.JButton btn_Cancelar;
     private javax.swing.JButton btn_CancelarBuscar;
     private javax.swing.JButton btn_Eliminar;
-    private javax.swing.JButton btn_InformacionVendedor;
     private javax.swing.JButton btn_MenuVendedor;
     private javax.swing.JButton btn_Modificar;
     private javax.swing.JToggleButton btn_RegistrarVendedor1;

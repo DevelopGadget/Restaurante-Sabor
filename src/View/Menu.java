@@ -19,7 +19,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btn_VentaMenu = new javax.swing.JButton();
         btn_VendedoresMenu = new javax.swing.JButton();
-        btn_InformacionMenu = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         jLabel3.setText("jLabel3");
@@ -47,19 +46,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_VendedoresMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 120, -1));
-
-        btn_InformacionMenu.setText("Informacion");
-        btn_InformacionMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_InformacionMenuMouseClicked(evt);
-            }
-        });
-        btn_InformacionMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_InformacionMenuActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_InformacionMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 120, -1));
 
         jButton1.setText("Productos ");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -90,21 +76,6 @@ public class Menu extends javax.swing.JFrame {
         vendedor.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_VendedoresMenuMouseClicked
-
-    //Evento para pasar a la ventana Informacion
-    private void btn_InformacionMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InformacionMenuMouseClicked
-        try {
-            Informacion infomacion = new Informacion();
-            infomacion.setVisible(true);
-            this.dispose();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No puede acceder a esta opcion, primero se necesta una venta.", "Error", 0);
-        };
-    }//GEN-LAST:event_btn_InformacionMenuMouseClicked
-
-    private void btn_InformacionMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InformacionMenuActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_InformacionMenuActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -159,7 +130,6 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_InformacionMenu;
     private javax.swing.JButton btn_VendedoresMenu;
     private javax.swing.JButton btn_VentaMenu;
     private javax.swing.JButton jButton1;

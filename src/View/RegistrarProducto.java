@@ -43,7 +43,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txt_CantidaProducto = new javax.swing.JTextField();
         btn_RegistarProducto = new javax.swing.JButton();
-        btn_InformacionMenu1 = new javax.swing.JButton();
         btn_VendedoresMenu1 = new javax.swing.JButton();
         btn_VentaMenu1 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
@@ -71,7 +70,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         btn_VentaMenu = new javax.swing.JButton();
         btn_VendedoresMenu = new javax.swing.JButton();
-        btn_InformacionMenu = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -149,18 +147,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
             }
         });
 
-        btn_InformacionMenu1.setText("Informacion");
-        btn_InformacionMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_InformacionMenu1MouseClicked(evt);
-            }
-        });
-        btn_InformacionMenu1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_InformacionMenu1ActionPerformed(evt);
-            }
-        });
-
         btn_VendedoresMenu1.setText("Vendedores");
         btn_VendedoresMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -219,8 +205,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
                         .addComponent(btn_VentaMenu1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_VendedoresMenu1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_InformacionMenu1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -255,7 +239,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton10)
                     .addComponent(btn_VentaMenu1)
-                    .addComponent(btn_InformacionMenu1)
                     .addComponent(btn_VendedoresMenu1))
                 .addGap(19, 19, 19))
         );
@@ -461,18 +444,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
             }
         });
 
-        btn_InformacionMenu.setText("Informacion");
-        btn_InformacionMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_InformacionMenuMouseClicked(evt);
-            }
-        });
-        btn_InformacionMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_InformacionMenuActionPerformed(evt);
-            }
-        });
-
         jButton9.setText("Menu");
         jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -514,8 +485,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
                         .addComponent(btn_VentaMenu)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_VendedoresMenu)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_InformacionMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -551,7 +520,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton9)
                     .addComponent(btn_VentaMenu)
-                    .addComponent(btn_InformacionMenu)
                     .addComponent(btn_VendedoresMenu))
                 .addGap(23, 23, 23))
         );
@@ -583,20 +551,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton9MouseClicked
-
-    private void btn_InformacionMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InformacionMenuActionPerformed
-
-    }//GEN-LAST:event_btn_InformacionMenuActionPerformed
-
-    private void btn_InformacionMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InformacionMenuMouseClicked
-        try {
-            Informacion infomacion = new Informacion();
-            infomacion.setVisible(true);
-            this.dispose();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No puede acceder a esta opcion, primero se necesta una venta.", "Error", 0);
-        }
-    }//GEN-LAST:event_btn_InformacionMenuMouseClicked
 
     private void btn_VendedoresMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_VendedoresMenuMouseClicked
         Vendedor vendedor = new Vendedor();
@@ -734,20 +688,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
         vendedor.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_VendedoresMenu1MouseClicked
-
-    private void btn_InformacionMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InformacionMenu1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_InformacionMenu1ActionPerformed
-
-    private void btn_InformacionMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InformacionMenu1MouseClicked
-        try {
-            Informacion infomacion = new Informacion();
-            infomacion.setVisible(true);
-            this.dispose();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No puede acceder a esta opcion, primero se necesta una venta.", "Error", 0);
-        }
-    }//GEN-LAST:event_btn_InformacionMenu1MouseClicked
 
     private void btn_RegistarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistarProductoActionPerformed
         proco.Backup();
@@ -974,8 +914,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
     private javax.swing.JButton btn_CancelarModificar;
     private javax.swing.JButton btn_EliminarModificar;
     private javax.swing.JButton btn_GuadarModificar;
-    private javax.swing.JButton btn_InformacionMenu;
-    private javax.swing.JButton btn_InformacionMenu1;
     private javax.swing.JButton btn_ModificarProducto;
     private javax.swing.JButton btn_RegistarProducto;
     private javax.swing.JButton btn_VendedoresMenu;
