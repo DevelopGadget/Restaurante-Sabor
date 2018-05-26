@@ -1245,38 +1245,38 @@ public class Venta extends javax.swing.JFrame {
 
     private void btn_RetirarVenta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RetirarVenta1ActionPerformed
         try {
-            if (Integer.parseInt(txt_Cantidad.getText()) <= Integer.parseInt(tbl_CarritoVenta1.getValueAt(tbl_CarritoVenta1.getSelectedRow(), 3).toString()) && Integer.parseInt(txt_Cantidad.getText()) > 1) {
-                venco.Read(tbl_CarritoVenta1.getValueAt(tbl_CarritoVenta1.getSelectedRow(), 0).toString(), Integer.parseInt(txt_Cantidad.getText()));
+            if (Integer.parseInt(txt_Cantidad1.getText()) <= Integer.parseInt(tbl_CarritoVenta1.getValueAt(tbl_CarritoVenta1.getSelectedRow(), 3).toString()) && Integer.parseInt(txt_Cantidad1.getText()) >= 1) {
+                venco.Read(tbl_CarritoVenta1.getValueAt(tbl_CarritoVenta1.getSelectedRow(), 0).toString(), Integer.parseInt(txt_Cantidad1.getText()));
                 System.out.println((int) Index);
                 venco.Update((int) Index, new VentaM(tbl_CarritoVenta1.getValueAt((int) Index,
                         0).toString(), tbl_CarritoVenta1.getValueAt((int) Index, 1).toString(),
                         Double.parseDouble(tbl_CarritoVenta1.getValueAt((int) Index, 2).toString()),
                         Integer.parseInt(tbl_CarritoVenta1.getValueAt((int) Index, 3).toString())
-                        - Integer.parseInt(txt_Cantidad.getText()), venco.getVenta().get((int) Index).getVendedor(),
-                        Double.parseDouble(tbl_CarritoVenta1.getValueAt((int) Index, 4).toString()) - (Integer.parseInt(txt_Cantidad.getText()) * Double.parseDouble(tbl_CarritoVenta.getValueAt((int) Index, 2).toString())), vendeco.getVendedor().get(cmbx_VendedorVenta.getSelectedIndex()).getID()));
+                        - Integer.parseInt(txt_Cantidad1.getText()), venco.getVenta().get((int) Index).getVendedor(),
+                        Double.parseDouble(tbl_CarritoVenta1.getValueAt((int) Index, 4).toString()) - (Integer.parseInt(txt_Cantidad1.getText()) * Double.parseDouble(tbl_CarritoVenta1.getValueAt((int) Index, 2).toString())), vendeco.getVendedor().get(cmbx_VendedorVenta1.getSelectedIndex()).getID()));
                 Subtotal(tp_TotalPagarVenta);
 
                 if (venco.getVenta().get((int) Index).getCantidad() == 0) {
                     venco.Delete((int) Index);
-                    Subtotal(tp_TotalPagarVenta);
+                    Subtotal(tp_TotalPagarVenta1);
                 }
                 if (venco.getVenta().size() == 0) {
-                    btn_CancelarCompra.setEnabled(false);
+                    btn_CancelarCompra1.setEnabled(false);
                 }
 
-                txt_nombre.setText(null);
-                txt_Cantidad.setText(null);
+                txt_nombre1.setText(null);
+                txt_Cantidad1.setText(null);
                 txt_BuscarRegistroVenta.setText(null);
-                txt_BuscarProductoVenta.setText(null);
-                txt_Cantidad.setEnabled(false);
+                txt_BuscarProductoVenta1.setText(null);
+                txt_Cantidad1.setEnabled(false);
 
-                btn_RetirarVenta.setEnabled(false);
+                btn_RetirarVenta1.setEnabled(false);
                 ListarTodo();
                 Listar((DefaultTableModel) tbl_CarritoVenta1.getModel(), venco.ReadAll());
                 System.out.println(" 3 ");
-            } else if (Integer.parseInt(txt_Cantidad.getText()) >= Integer.parseInt(tbl_CarritoVenta.getValueAt(tbl_CarritoVenta.getSelectedRow(), 3).toString())) {
+            } else if (Integer.parseInt(txt_Cantidad1.getText()) >= Integer.parseInt(tbl_CarritoVenta1.getValueAt(tbl_CarritoVenta1.getSelectedRow(), 3).toString())) {
                 JOptionPane.showMessageDialog(null, "Al retirar, la cantidad no debe de ser mayor a la del carrito de compra.", "Error", 0);
-            } else if (Integer.parseInt(txt_Cantidad.getText()) <= Integer.parseInt(tbl_CarritoVenta.getValueAt(tbl_CarritoVenta.getSelectedRow(), 3).toString())) {
+            } else if (Integer.parseInt(txt_Cantidad1.getText()) <= Integer.parseInt(tbl_CarritoVenta1.getValueAt(tbl_CarritoVenta1.getSelectedRow(), 3).toString())) {
 
             }
         } catch (Exception e) {
@@ -1291,7 +1291,7 @@ public class Venta extends javax.swing.JFrame {
                     venco.CreateB(new VentaM(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 0).toString(),
                             tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 1).toString(),
                             Integer.parseInt(txt_Cantidad1.getText()), (String) cmbx_VendedorVenta1.getSelectedItem(),
-                            Double.parseDouble(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta.getSelectedRow(), 2).toString())
+                            Double.parseDouble(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 2).toString())
                             * Integer.parseInt(txt_Cantidad1.getText()), vendeco.getVendedor().get((int) IndexCmbx).getID(), txt_Direccion.getText(), Double.parseDouble(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 2).toString())));
 
                     proco.Update(tbl_ProductosVenta1.getSelectedRow(), new Producto(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 0).toString(), tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 1).toString(),
