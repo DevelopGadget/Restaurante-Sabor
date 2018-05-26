@@ -1,5 +1,7 @@
 package Model;
+
 public class Vendedorm {
+    
     private String nombre;
     private String NumDocumento;
     private String ID;

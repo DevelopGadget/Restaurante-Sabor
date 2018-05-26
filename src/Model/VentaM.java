@@ -1,7 +1,7 @@
 package Model;
 import Controller.VentaController;
 
-public class VentaM extends Producto implements Comparable<VentaM> {
+public class VentaM extends Producto{
     
     private VentaController venco = new VentaController();
     private String Vendedor;
@@ -9,7 +9,6 @@ public class VentaM extends Producto implements Comparable<VentaM> {
     private String CodigoVend;
     private String CodigoComp;
     private double sueldo;
-    private Integer x = (int) subtotal;
 
     public VentaM(String ID, String nombre, double precio, int cantidad, String Vendedor, double subtotal, String CodigoVend, String CodigoComp) {
 
@@ -27,6 +26,13 @@ public class VentaM extends Producto implements Comparable<VentaM> {
         this.CodigoVend = CodigoVend;
         this.sueldo = sueldo;
     }   
+
+    public VentaM(String ID, String nombre, double precio, int cantidad, String Vendedor, double subtotal, String CodigoVend) {
+        super(ID, nombre, precio, cantidad);
+        this.Vendedor = Vendedor;
+        this.subtotal = subtotal;
+        this.CodigoVend = CodigoVend;
+    }
 
     public double getSubtotal() {
         return subtotal;
@@ -67,19 +73,5 @@ public class VentaM extends Producto implements Comparable<VentaM> {
     public void setSueldo(double sueldo) {
         this.sueldo = sueldo;
     }
-    
-    
-    
-    @Override
-    public int compareTo(VentaM o) {
-        if (this.subtotal < o.getSubtotal()) {
-            return 1;
-        } else if (this.subtotal > o.getSubtotal()) {
-            return -1;
-        }
-        return 0;
-    }
-    
-    
 
 }

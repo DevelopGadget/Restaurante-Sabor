@@ -45,8 +45,8 @@ public class VendedorController {
         vendedor.remove(index);
     }
     
-    public static ArrayList<Vendedorm> getVendedor() {
+    public ArrayList<Vendedorm> getVendedor() {
         return vendedor;
     }
-    
+
 }
