@@ -1,22 +1,31 @@
 package Model;
+
 import Controller.VentaController;
 
-public class VentaM extends Producto{
-    
+public class VentaM extends Producto {
+
     private VentaController venco = new VentaController();
     private String Vendedor;
     private double subtotal;
     private String CodigoVend;
     private String CodigoComp;
     private double sueldo;
+    private String Direccion;
 
     public VentaM(String ID, String nombre, double precio, int cantidad, String Vendedor, double subtotal, String CodigoVend, String CodigoComp) {
-
         super(ID, nombre, precio, cantidad);
         this.Vendedor = Vendedor;
         this.subtotal = subtotal;
         this.CodigoVend = CodigoVend;
         this.CodigoComp = CodigoComp;
+    }
+
+    public VentaM(String ID, String nombre,int cantidad, String Vendedor, double subtotal, String CodigoVend, String Direccion, double precio) {
+        super(ID, nombre, precio, cantidad);
+        this.Vendedor = Vendedor;
+        this.subtotal = subtotal;
+        this.CodigoVend = CodigoVend;
+        this.Direccion = Direccion;
     }
 
     public VentaM(String ID, String nombre, double precio, int cantidad, String Vendedor, double subtotal, String CodigoVend, double sueldo) {
@@ -25,7 +34,7 @@ public class VentaM extends Producto{
         this.subtotal = subtotal;
         this.CodigoVend = CodigoVend;
         this.sueldo = sueldo;
-    }   
+    }
 
     public VentaM(String ID, String nombre, double precio, int cantidad, String Vendedor, double subtotal, String CodigoVend) {
         super(ID, nombre, precio, cantidad);
@@ -72,6 +81,22 @@ public class VentaM extends Producto{
 
     public void setSueldo(double sueldo) {
         this.sueldo = sueldo;
+    }
+
+    public VentaController getVenco() {
+        return venco;
+    }
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setVenco(VentaController venco) {
+        this.venco = venco;
+    }
+
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
     }
 
 }

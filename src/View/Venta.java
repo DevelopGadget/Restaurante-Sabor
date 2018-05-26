@@ -1112,6 +1112,7 @@ public class Venta extends javax.swing.JFrame {
         txt_Cantidad.setText(null);
         txt_nombre.setText(null);
         ListarTodo();
+        Listar((DefaultTableModel) tbl_CarritoVenta.getModel(), venco.ReadAll());
         Subtotal(tp_TotalPagarVenta);
         btn_ComprarVenta.setEnabled(false);
     }//GEN-LAST:event_btn_ComprarVentaActionPerformed
@@ -1289,10 +1290,9 @@ public class Venta extends javax.swing.JFrame {
                 if (Integer.parseInt(txt_Cantidad1.getText()) <= Integer.parseInt(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 3).toString()) && Integer.parseInt(txt_Cantidad1.getText()) >= 1) {
                     venco.CreateB(new VentaM(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 0).toString(),
                             tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 1).toString(),
-                            Double.parseDouble(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 2).toString()),
                             Integer.parseInt(txt_Cantidad1.getText()), (String) cmbx_VendedorVenta1.getSelectedItem(),
                             Double.parseDouble(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta.getSelectedRow(), 2).toString())
-                            * Integer.parseInt(txt_Cantidad1.getText()), vendeco.getVendedor().get((int) IndexCmbx).getID(), txt_Direccion.getText()));
+                            * Integer.parseInt(txt_Cantidad1.getText()), vendeco.getVendedor().get((int) IndexCmbx).getID(), txt_Direccion.getText(), Double.parseDouble(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 2).toString())));
 
                     proco.Update(tbl_ProductosVenta1.getSelectedRow(), new Producto(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 0).toString(), tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 1).toString(),
                             Double.parseDouble(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 2).toString()), proco.getProducto().get(tbl_ProductosVenta1.getSelectedRow()).getCantidad() - Integer.parseInt(txt_Cantidad1.getText())));
@@ -1360,6 +1360,7 @@ public class Venta extends javax.swing.JFrame {
         txt_nombre1.setText(null);
         txt_Direccion.setText(null);
         ListarTodo();
+        Listar((DefaultTableModel) tbl_CarritoVenta1.getModel(), venco.ReadAll());
         Subtotal(tp_TotalPagarVenta1);
         btn_ComprarVenta1.setEnabled(false);
         txt_Direccion.setText(null);
