@@ -11,21 +11,24 @@ public class VentaM extends Producto {
     private String CodigoComp;
     private double sueldo;
     private String Direccion;
+    private boolean DV;
 
-    public VentaM(String ID, String nombre, double precio, int cantidad, String Vendedor, double subtotal, String CodigoVend, String CodigoComp) {
+    public VentaM(String ID, String nombre, double precio, int cantidad, String Vendedor, double subtotal, String CodigoVend, String CodigoComp, boolean DV) {
         super(ID, nombre, precio, cantidad);
         this.Vendedor = Vendedor;
         this.subtotal = subtotal;
         this.CodigoVend = CodigoVend;
         this.CodigoComp = CodigoComp;
+        this.DV = DV;
     }
 
-    public VentaM(String ID, String nombre,int cantidad, String Vendedor, double subtotal, String CodigoVend, String Direccion, double precio) {
+    public VentaM(String ID, String nombre,int cantidad, String Vendedor, double subtotal, String CodigoVend, String Direccion, double precio, boolean DV) {
         super(ID, nombre, precio, cantidad);
         this.Vendedor = Vendedor;
         this.subtotal = subtotal;
         this.CodigoVend = CodigoVend;
         this.Direccion = Direccion;
+        this.DV = DV;
     }
 
     public VentaM(String ID, String nombre, double precio, int cantidad, String Vendedor, double subtotal, String CodigoVend, double sueldo) {
@@ -87,16 +90,27 @@ public class VentaM extends Producto {
         return venco;
     }
 
-    public String getDireccion() {
-        return Direccion;
-    }
-
     public void setVenco(VentaController venco) {
         this.venco = venco;
+    }
+
+
+    public boolean isDV() {
+        return DV;
+    }
+
+    public void setDV(boolean DV) {
+        this.DV = DV;
+    }
+
+    public String getDireccion() {
+        return Direccion;
     }
 
     public void setDireccion(String Direccion) {
         this.Direccion = Direccion;
     }
-
+    
+    
+    
 }
