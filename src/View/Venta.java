@@ -23,11 +23,14 @@ public class Venta extends javax.swing.JFrame {
     private VendedorController vendeco = new VendedorController();
     private Object Index = null;
     private Object IndexCmbx = null;
+    private Object IndexCmbxx = null;
 
     public Venta() {
         initComponents();
         setLocationRelativeTo(null);
         Subtotal(tp_TotalPagarVenta);
+        ListarCombobox(cmbx_VendedorVenta1, vendeco.getVendedor());
+        ListarCombobox(cmbx_VendedorVenta, vendeco.getVendedor());
         ListarTodo();
 
     }
@@ -1410,7 +1413,8 @@ public class Venta extends javax.swing.JFrame {
                             tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 1).toString(),
                             Integer.parseInt(txt_Cantidad1.getText()), (String) cmbx_VendedorVenta1.getSelectedItem(),
                             Double.parseDouble(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 2).toString())
-                            * Integer.parseInt(txt_Cantidad1.getText()), vendeco.getVendedor().get((int) IndexCmbx).getID(), txt_Direccion.getText(), Double.parseDouble(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 2).toString()),true));
+                            * Integer.parseInt(txt_Cantidad1.getText()), vendeco.getVendedor().get((int) IndexCmbxx).getID(), txt_Direccion.getText(), Double.parseDouble(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 2).toString()),true));
+                            System.out.println(vendeco.getVendedor().get((int) IndexCmbxx).getID() +"  HOLAAA");
                     
 
                     proco.Update(tbl_ProductosVenta1.getSelectedRow(), new Producto(tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 0).toString(), tbl_ProductosVenta1.getValueAt(tbl_ProductosVenta1.getSelectedRow(), 1).toString(),
@@ -1463,7 +1467,8 @@ public class Venta extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_Cantidad1KeyTyped
 
     private void cmbx_VendedorVenta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbx_VendedorVenta1ActionPerformed
-        // TODO add your handling code here:
+        IndexCmbxx = cmbx_VendedorVenta1.getSelectedIndex();
+        
     }//GEN-LAST:event_cmbx_VendedorVenta1ActionPerformed
 
     private void btn_ComprarVenta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ComprarVenta1ActionPerformed
@@ -1519,8 +1524,7 @@ public class Venta extends javax.swing.JFrame {
         Listar((DefaultTableModel) tbl_RegistroVenta.getModel(), venco.ReadVentas());
         Listar((DefaultTableModel) tbl_RegistroVentaDomicilio.getModel(), venco.ReadVentasDomicilios());
         Listar((DefaultTableModel) tbl_ProductosVenta1.getModel(), proco.ReadAll());
-        ListarCombobox(cmbx_VendedorVenta1, vendeco.getVendedor());
-        ListarCombobox(cmbx_VendedorVenta, vendeco.getVendedor());
+        
     }
 
     public void ListarCombobox(JComboBox cmbx, ArrayList<Vendedorm> Array) {

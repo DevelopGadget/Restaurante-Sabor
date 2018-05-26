@@ -82,7 +82,7 @@ public class VentaController {
                     Backup.get(i).getDireccion(),
                     String.valueOf(Backup.get(i).getPrecio()),
                     String.valueOf(Backup.get(i).getCantidad())});
-                System.out.println(Backup.get(i).getDireccion() + "  Hola");
+                
             }
 
         }
@@ -196,7 +196,7 @@ public class VentaController {
                     Registro.get(i).getDireccion(),
                     (double) Registro.get(i).getPrecio(), 
                     Registro.get(i).isDV()));
-            System.out.println(Registro.get(i).getDireccion()+ " BackupVDomicilio  HOLA");
+            
         }
     }
 
